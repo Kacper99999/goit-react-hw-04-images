@@ -1,27 +1,23 @@
-import React,{Component} from "react";
+import React from "react";
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 import propTypes from "prop-types";
 
-export default class Searchbar extends Component{
+export default function Searchbar ({imageURL, alt, children}){
 
-    openLightbox = () => {
-        const { imageURL, alt } = this.props;
+    const openLightbox = () => {
         const instance = basicLightbox.create(`
             <img src="${imageURL}" alt="${alt}" />
         `);
         instance.show();
     };
 
-    render(){
-
-
         return(
-            <div className="Modal " onClick={this.openLightbox}>
-                {this.props.children}
+            <div className="Modal " onClick={openLightbox}>
+                {children}
             </div>
         )
-    }
+    
 }
 
 Searchbar.propTypes = {

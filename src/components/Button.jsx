@@ -1,16 +1,14 @@
-import React,{Component} from "react";
+import React from "react";
 import propTypes from 'prop-types';
 
-export default class Button extends Component{
+export default function Button({increment}) {
 
-    render(){
-        const {increment} = this.props
         return(
             <div className="Divbutton">
                 <button className="Button" onClick={increment}>Load more</button>
             </div>
         )
-    }
+    
 }
 
 Button.propTypes = {

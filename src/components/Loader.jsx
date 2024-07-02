@@ -1,10 +1,8 @@
-import React,{Component} from "react";
+import React from "react";
 import { Oval } from 'react-loader-spinner';
 import propTypes from "prop-types";
-export default class Loader extends Component{
+export default function Loader ({loading}){
 
-    render(){
-        const {loading} = this.props
         return(
             
             loading && <div className="Loader"> <Oval 
@@ -18,9 +16,8 @@ export default class Loader extends Component{
                 />
             </div>
         )
-    }
 }
 
 Loader.propTypes = {
-    loading : propTypes.func.isRequired
+    loading : propTypes.bool
 }

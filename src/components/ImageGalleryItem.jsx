@@ -1,22 +1,18 @@
-import React, { Component } from "react";
+import React from "react";
 import Modal from "/src/components/Modal";
 import 'basiclightbox/dist/basicLightbox.min.css';
 import propTypes from "prop-types"
 
-export default class ImageGalleryItem extends Component {
+export default function ImageGalleryItem({image}) {      
 
-    render(){
-        
-        const {image} = this.props;
         return(
             <li className="ImageGalleryItem ImageGalleryItem-image">
                 <Modal imageURL = {image.largeImageURL} alt = {image.tags}>
                 <img src={image.webformatURL} alt={image.tags} />
                 </Modal>
-            </li>
-            
+            </li>          
         )
-    }
+    
 }
 
 ImageGalleryItem.propTypes = {
