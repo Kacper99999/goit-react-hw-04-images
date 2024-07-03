@@ -29,5 +29,5 @@ export default function Searchbar ({onSubmit}){
 
 
 Searchbar.propTypes = {
-    onSubmit : propTypes.func.isRequired
+    onSubmit : propTypes.func
 }

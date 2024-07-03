@@ -18,7 +18,7 @@ export default function App() {
 
     const prevSearch = useRef(state.search);
 
-  const fetchImages = (()=>{
+  const fetchImages = ()=>{
     setState({...state, loading:true})
     const apiKey = "43636213-16e765190282d34979b0ca235";
     axios.get(
@@ -28,14 +28,18 @@ export default function App() {
       setState(prevState => ({
         ...prevState, 
         images: prevSearch.current === state.search ? [...prevState.images, ...data.hits] : data.hits,
-        loading:false,
+        loading: false,
         page: prevSearch.current === state.search ? prevState.page : 1
-
-        
       }))
       prevSearch.current = state.search;
+    }).catch(error => {
+      alert("Error fetching images:", error);
+      setState(prevState => ({
+        ...prevState,
+        loading: false
+      }))
     })
-  });
+  };
 
 
 

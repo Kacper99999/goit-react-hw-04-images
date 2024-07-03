@@ -4,6 +4,7 @@ import 'basiclightbox/dist/basicLightbox.min.css';
 import propTypes from "prop-types"
 
 export default function ImageGallery({images}) {
+    
         return(
             <ul className="ImageGallery">
                 {images.map((image) =>(

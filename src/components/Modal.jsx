@@ -3,7 +3,7 @@ import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 import propTypes from "prop-types";
 
-export default function Searchbar ({imageURL, alt, children}){
+export default function Modal ({imageURL, alt, children}){
 
     const openLightbox = () => {
         const instance = basicLightbox.create(`
@@ -20,8 +20,8 @@ export default function Searchbar ({imageURL, alt, children}){
     
 }
 
-Searchbar.propTypes = {
-    imageURL : propTypes.string.isRequired,
-    alt : propTypes.string.isRequired,
-    children : propTypes.node.isRequired
+Modal.propTypes = {
+    imageURL : propTypes.string,
+    alt : propTypes.string,
+    children : propTypes.node
 }

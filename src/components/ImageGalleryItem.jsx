@@ -17,9 +17,9 @@ export default function ImageGalleryItem({image}) {
 
 ImageGalleryItem.propTypes = {
         image:propTypes.shape({
-            largeImageURL : propTypes.string.isRequired,
-            tags : propTypes.string.isRequired,
-            webformatURL : propTypes.string.isRequired
+            largeImageURL : propTypes.string,
+            tags : propTypes.string,
+            webformatURL : propTypes.string
         }    
         )
 }
